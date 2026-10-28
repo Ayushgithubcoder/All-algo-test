@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:8000'
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 
 export const api = {
   getSymbols: (q) =>
@@ -31,4 +31,4 @@ export const api = {
     fetch(`${API_BASE}/api/live/snapshot?symbol=${encodeURIComponent(symbol)}`).then(r => r.json()),
 }
 
-export const WS_BASE = 'ws://localhost:8000'
+export const WS_BASE = import.meta.env.VITE_WS_URL || 'ws://localhost:8000'
